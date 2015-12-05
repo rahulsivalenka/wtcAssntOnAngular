@@ -1,0 +1,28 @@
+/********************/
+/**** login form ****/
+/********************/
+form.login-form label {
+  display: block;
+}
+
+form.login-form label * {
+  margin: 0px;
+}
+
+form.login-form label span {
+  display: inline-block;
+  width: 80px;
+}
+
+form.login-form div[role="alert"] {
+  display: inline-block;
+}
+
+form.login-form div[role="alert"] span.error {
+  color: red;
+  position: relative;
+  left: 85px;
+  top: -2px;
+  /*float: right;*/
+  font-size: 12px;
+}
