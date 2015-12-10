@@ -4,6 +4,6 @@ app.controller('LoginController', [
   //controller logic
   function($scope) {
     $scope.user = {name: '', password: ''}
-    debugger;
+    // debugger;
   }
 ]);
