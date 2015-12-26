@@ -42,20 +42,6 @@ form.login-form label span {
   /*width: 80px;*/
 }
 
-form.login-form div[role="alert"] {
-  display: inline-block;
-}
-
-form.login-form div[role="alert"] span.error {
-  color: red;
-  position: relative;
-  left: 85px;
-  top: -2px;
-  /*float: right;*/
-  font-size: 12px;
-}
-
-
 /*#container {
   border: 1px solid #CCC;
   background: white;
@@ -118,4 +104,33 @@ form.login-form button:active {
 
 form.login-form button[type="reset"] {
   background: rgba(244, 67, 54, 0.88);
+}
+
+
+/* toast styling */
+div#toast[role="alert"].open-toast {
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+}
+div#toast[role="alert"] {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -100px);
+  transform: translate(-50%, -100px);
+  padding: 10px 20px;
+  background: rgba(222, 221, 221, 0.78);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.45); 
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.45);
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.45); 
+  -webkit-transition: visibility 0.3s, -webkit-transform 0.3s;
+  transition: visibility 0.3s, transform 0.3s;
+}
+
+div#toast[role="alert"] span.error {
+  color: #DC0303;
+  font-size: 13px;
 }

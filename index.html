@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Employee DB - WTC (AngulaJS)</title>
 
   <!-- css imports -->
   <link rel="stylesheet" type="text/css" href="resources/css/main.css">
@@ -12,14 +12,21 @@
   <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 </head>
 
-<body ng-app="EmployeeInfoApp">
-<ng-view></ng-view>
+<body ng-app="EmployeeInfoApp" ng-controller="MainController">
+  <!-- view -->
+  <ng-view></ng-view>
 
-<!-- app.js -->
-<script type="text/javascript" src="js/app.js"></script>
+  <!-- toast for notifications -->
+  <div id="toast" role="alert" ng-class="{'open-toast': openToast}">
+    <span class="error">{{msg}}</span>
+  </div>
 
-<!-- controllers -->
-<script type="text/javascript" src="js/controllers/LoginController.js"></script>
+  <!-- app.js -->
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <!-- controllers -->
+  <script type="text/javascript" src="js/controllers/MainController.js"></script>
+  <script type="text/javascript" src="js/controllers/LoginController.js"></script>
 </body>
 
 </html>

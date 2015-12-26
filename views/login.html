@@ -1,24 +1,26 @@
-<!-- login form template -->
-<form name="loginForm" class="login-form">
-  <label>
-    <span>User name</span>
-    <div class="input-wrapper"><input type="text" name="userName" ng-model="user.name" required></div>
-  </label>
-  <div role="alert">
-    <!-- <span class="error" ng-show="loginForm.userName.$error.required">
-       Required!</span> -->
-    <!-- <span class="error" ng-hide="loginForm.userName.$error.required">
-       {{user.name}}</span> -->
-  </div>
-  <label>
-    <span>Password</span>
-    <div class="input-wrapper"><input type="password" name="password" ng-model="user.password" required></div>
-  </label>
-  <div role="alert">
-    <!-- <span class="error" ng-show="loginForm.password.$error.required">
-       Required!</span> -->
-  </div>
+<div view="login" ng-controller="LoginController">
+  <!-- login form template -->
+  <form name="loginForm" class="login-form" method="post">
+    <label>
+      <span>User name</span>
+      <div class="input-wrapper"><input type="text" name="userName" ng-model="user.name" required></div>
+    </label>
+    <!-- <div role="alert"> -->
+      <!-- <span class="error" ng-show="loginForm.userName.$error.required">
+         Required!</span> -->
+      <!-- <span class="error" ng-hide="loginForm.userName.$error.required">
+         {{user.name}}</span> -->
+    <!-- </div> -->
+    <label>
+      <span>Password</span>
+      <div class="input-wrapper"><input type="password" name="password" ng-model="user.password" required></div>
+    </label>
+    <!-- <div role="alert"> -->
+      <!-- <span class="error" ng-show="loginForm.password.$error.required">
+         Required!</span> -->
+    <!-- </div> -->
 
-  <button type="submit">Log In</button>
-  <button type="reset">Reset</button>
-</form>
+    <button type="submit" ng-click="login(user)">Log In</button>
+    <button type="reset">Reset</button>
+  </form>
+</div>
