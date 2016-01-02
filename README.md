@@ -54,4 +54,6 @@ On LogOut CLick User should navigate to LogIn Screen.
     ![Error Toast](/screens/wrong-user-password.png)
 * Normal Toasts
 
-    ![Normal Toasts](/screens/login-logout-toasts.png)
+    <p align="center">
+        <img src="/screens/login-logout-toasts.png" alt="Normal Toasts">
+    </p>
