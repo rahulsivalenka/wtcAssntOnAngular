@@ -2,6 +2,34 @@ body {
   background: rgba(204, 204, 204, 0.25);
 }
 
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  outline: none;
+}
+
+button.primary {
+  background: rgba(0, 150, 136, 0.88);
+}
+
+button.primary:active,
+button.primary:focus {
+  background: rgba(0, 88, 80, 0.88);
+}
+
+button.secondary {
+  background: rgba(244, 67, 54, 0.88);
+}
+
+button.secondary:active,
+button.secondary:focus {
+  background: rgba(183, 15, 2, 0.88);
+}
+
 /********************/
 /**** login form ****/
 /********************/
@@ -90,22 +118,19 @@ form.login-form input {
 
 form.login-form button {
   width: 100%;
-  background: #009688;
   border: none;
   padding: 8px 9px;
   color: #000;
   margin: 5px auto;
 }
 
-/*removing default outline on active in chrome*/
-form.login-form button:active {
-  outline: none;
+/* logout button */
+button#logout {
+  padding: 5px 20px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
 }
-
-form.login-form button[type="reset"] {
-  background: rgba(244, 67, 54, 0.88);
-}
-
 
 /* toast styling */
 div#toast[role="alert"].open-toast {
@@ -128,9 +153,10 @@ div#toast[role="alert"] {
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.45); 
   -webkit-transition: visibility 0.3s, -webkit-transform 0.3s;
   transition: visibility 0.3s, transform 0.3s;
+  font-size: 13px;
+  color: #000;
 }
 
-div#toast[role="alert"] span.error {
+div#toast[role="alert"].error {
   color: #DC0303;
-  font-size: 13px;
 }

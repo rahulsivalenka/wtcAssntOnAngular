@@ -2,16 +2,19 @@ app.controller('LoginController', [
   // dependencies
   '$scope', // an object that refers to application model
   '$http', // http service to communicate with HTTP servers
+  '$location', // parses window.location
   // controller logic
-  function($scope, $http) {
-    // local variables
-    var msg = "";
+  function($scope, $http, $location) {
+    /*local variables*/
+    var toast = {};
 
-    // defining models for login view, the scope
+    /*defining models for login view, the scope*/
     $scope.user = {name: '', password: ''};
     
-    // handlers
+    /*handlers*/
+    /*login handler*/
     $scope.login = function(user) {
+      var userObj = {};
 
       // fetching the users data from the JSON file
       // API ref: https://docs.angularjs.org/api/ng/service/$http
@@ -36,28 +39,53 @@ app.controller('LoginController', [
           if(userFetched.name === user.name
               && userFetched.password === user.password) {
             isValid = true;
+
+            // setting the app user info
+            userObj = {
+              name: userFetched.name,
+              id: userFetched.id
+            };
+
             return;
           }
         });
 
-        console.log(" isValid", isValid);
+        console.log("isValid", isValid);
         if(isValid) { // login
-          // TODO redirect to logged in page
-        } else { // error
-          msg = "Username or password is incorrect!";
+          // adding authentication to the user obj
+          userObj.authenticated = true;
+          console.log('logging in...', userObj);
+
+          //setting the user object for the app
+          $scope.$parent.loggedInUser = userObj;
+          // $scope.$parent.$digest();
+          localStorage.setItem('auth', JSON.stringify(userObj));
+          $scope.$emit('authenticate');
           
-          // opening the toast by firing a custom event,
-          // up the hierarchy
-          $scope.$emit('openToast', {msg: msg});
+          // redirect to logged in page
+          $scope._redirectPage(App.AUTH_URL + userObj.id);
+
+          toast.msg = "Login successfull."
+          toast.error = false;
+        } else { // error
+          toast.msg = "Username or password is incorrect!";
+          toast.error = true;
         }
+
+        $scope.$emit('openToast', toast);
       } // successCallback
 
       function failureCallback () {
         console.log("failureCallback", arguments);
 
-        msg = "Couldn't connect to server at the moment!"
-        $scope.$emit('openToast', {msg: msg});
+        toast.msg = "Couldn't connect to server at the moment!"
+        toast.error = true;
+        $scope.$emit('openToast', toast);
       } // failureCallback
-    }
+    }; //login ends
+
+    $scope._redirectPage = function($location, route) {
+      $location.path(route);
+    }.bind(this, $location); //_redirectPage ends
   }
 ]);

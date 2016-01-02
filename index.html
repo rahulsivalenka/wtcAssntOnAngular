@@ -10,23 +10,40 @@
   <!-- angular js libs -->
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+
+  <!-- static data -->
+  <!-- initializing the static data into a global object -->
+  <script type="text/javascript">
+    window.App = {};
+    window.App.AUTH_URL = '/auth/';
+    window.App.LOGIN_URL = '/';
+  </script>
 </head>
 
-<body ng-app="EmployeeInfoApp" ng-controller="MainController">
+<body ng-app="EmployeeInfoApp" ng-controller="AppController">
   <!-- view -->
-  <ng-view></ng-view>
+  <div ng-view></div>
+
+  <button id="logout" ng-click="logout()" class="secondary" ng-hide="!loggedInUser.authenticated">Logout</button>
 
   <!-- toast for notifications -->
-  <div id="toast" role="alert" ng-class="{'open-toast': openToast}">
-    <span class="error">{{msg}}</span>
+  <div id="toast" role="alert" ng-class="{'open-toast': toast.open, 'error': toast.error}">
+    <!-- ng-class expression used here will apply the 'open-toast' CSS class
+    only when 'openToast' is true -->
+    <!-- <span class="error">{{msg}}</span> -->
+    {{msg}}
   </div>
 
   <!-- app.js -->
   <script type="text/javascript" src="js/app.js"></script>
 
+  <!-- services -->
+  <script type="text/javascript" src="js/services/Authenticate.js"></script>
+
   <!-- controllers -->
-  <script type="text/javascript" src="js/controllers/MainController.js"></script>
+  <script type="text/javascript" src="js/controllers/AppController.js"></script>
   <script type="text/javascript" src="js/controllers/LoginController.js"></script>
+  <script type="text/javascript" src="js/controllers/MainController.js"></script>
 </body>
 
 </html>

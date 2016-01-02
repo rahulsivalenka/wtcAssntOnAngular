@@ -8,9 +8,13 @@ var app = angular.module(
 //routing
 app.config(function($routeProvider) {
   $routeProvider
-    .when('/', {
+    .when(App.LOGIN_URL, {
       controller: 'LoginController',
       templateUrl: 'views/login.html'
     })
-    .otherwise({redirectTo: '/'});
+    .when(App.AUTH_URL + ':uid', {
+      controller: 'MainController',
+      templateUrl: 'views/main.html'
+    })
+    .otherwise({redirectTo: App.LOGIN_URL});
 })

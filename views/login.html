@@ -1,4 +1,11 @@
-<div view="login" ng-controller="LoginController">
+<div view="login">
+<!-- 
+  Shouldn't again initialize the controller through ng-controller,
+  when using ngRoute's $routeProvider to configure a controller for
+  the view.
+  Ref: http://www.undefinednull.com/2014/02/17/resolve-in-angularjs-routes-explained-as-story/
+-->
+
   <!-- login form template -->
   <form name="loginForm" class="login-form" method="post">
     <label>
@@ -20,7 +27,7 @@
          Required!</span> -->
     <!-- </div> -->
 
-    <button type="submit" ng-click="login(user)">Log In</button>
-    <button type="reset">Reset</button>
+    <button type="submit" class="primary" ng-click="login(user)">Log In</button>
+    <button type="reset" class="secondary">Reset</button>
   </form>
 </div>
