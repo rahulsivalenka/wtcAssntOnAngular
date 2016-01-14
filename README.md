@@ -57,3 +57,8 @@ On LogOut CLick User should navigate to LogIn Screen.
     <p align="center">
         <img src="/screens/login-logout-toasts.png" alt="Normal Toasts">
     </p>
+
+## About Angular JS
+* [Views](views/README.md)
+* [Controllers](js/controllers/README.md)
+* [Services](js/services/README.md)
