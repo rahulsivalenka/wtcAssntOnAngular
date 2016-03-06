@@ -44,3 +44,16 @@ of the employee and the Grid will display that employee record only).
 there is a good view of both Form and Grid. 
     * LoggedIn user information and Logout option should be displayed at top right corner.
 On LogOut CLick User should navigate to LogIn Screen.
+
+## Screenshots
+* Login Screen
+
+    ![Login Screen](/screens/login-screen.png)
+* Error Toast
+
+    ![Error Toast](/screens/wrong-user-password.png)
+* Normal Toasts
+
+    <p align="center">
+        <img src="/screens/login-logout-toasts.png" alt="Normal Toasts">
+    </p>
