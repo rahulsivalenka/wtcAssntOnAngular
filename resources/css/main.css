@@ -160,3 +160,10 @@ div#toast[role="alert"] {
 div#toast[role="alert"].error {
   color: #DC0303;
 }
+
+/*****************************/
+/**** employee table page ****/
+/*****************************/
+div[view=main] tr.form td {
+  vertical-align: top;
+}

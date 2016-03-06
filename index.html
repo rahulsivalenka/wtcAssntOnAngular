@@ -27,11 +27,13 @@
   <button id="logout" ng-click="logout()" class="secondary" ng-hide="!loggedInUser.authenticated">Logout</button>
 
   <!-- toast for notifications -->
-  <div id="toast" role="alert" ng-class="{'open-toast': toast.open, 'error': toast.error}">
+  <div id="toast" role="alert" ng-class="{'open-toast': toast.open, 'error': toast.error}" ng-bind="msg">
     <!-- ng-class expression used here will apply the 'open-toast' CSS class
     only when 'openToast' is true -->
     <!-- <span class="error">{{msg}}</span> -->
-    {{msg}}
+    <!-- {{msg}} 
+      According to AngularJS best practices, it is recommended to use ng-bind in index.html instead of {{}} to avoid unwanted visible {{}} before loading the angular FW. In other views {{}} can be used as the FW is already loaded by then.
+    -->
   </div>
 
   <!-- app.js -->

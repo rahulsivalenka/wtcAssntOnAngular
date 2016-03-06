@@ -1,3 +1,46 @@
 <div view="main">
-  <div>Main View for {{loggedInUser.id}} : {{loggedInUser.name}}</div>
+  <!-- <div>Main View for {{loggedInUser.id}} : {{loggedInUser.name}}</div> -->
+  <div>
+    <table>
+    <thead>
+      <tr>
+        <th colspan="8">Employee Details</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Designation</th>
+        <th>DOB</th>
+        <th>Address</th>
+        <th>Mobile Number</th>
+        <th>Email ID</th>
+        <th>Added By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- form to add employee details -->
+      <tr class="form">
+        <td><input type="text" placeholder="First Name" ng-model="employee.name.firstName" /><br/><input type="text" placeholder="Last Name" ng-model="employee.name.lastName" /></td>
+        <td><input type="text" placeholder="Employee ID" ng-model="employee.id" /><br/></td>
+        <td><input type="text" placeholder="Designation" ng-model="employee.designation" /><br/></td>
+        <td><input type="date" placeholder="DOB" ng-model="employee.dob" /><br/></td>
+        <td><textarea placeholder="Address" ng-model="employee.address" ></textarea><br/></td>
+        <td><input type="text" placeholder="Mobile Number" ng-model="employee.mobile" /><br/></td>
+        <td><input type="text" placeholder="Email ID" ng-model="employee.email" /><br/></td>
+        <td><input type="text" placeholder="Added By" disabled ng-model="employee.addedBy"/><br/></td>
+      </tr>
+      <!-- Iterating through all the employee details -->
+      <tr ng-repeat="employee in employees">
+        <td>{{employee.name.firstName}} {{employee.name.lastName}}</td>
+        <td>{{employee.id}}</td>
+        <td>{{employee.designation}}</td>
+        <td>{{employee.dob | date : 'dd/MM/yyyy'}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.mobile}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.addedBy}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 </div>
