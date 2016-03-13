@@ -17,9 +17,9 @@ app.controller('AppController', [
         && loggedInUser.authenticated) { // and if the user if authenticated      
       $scope.loggedInUser = loggedInUser;
       // redirecting to main page
-      $location.path(App.AUTH_URL + loggedInUser.id);
+      $location.path(EmployeeInfoApp.AUTH_URL + loggedInUser.id);
     } else {
-      $location.path(App.LOGIN_URL);
+      $location.path(EmployeeInfoApp.LOGIN_URL);
     }*/
 
     //opening toast when the openToast event is fired from any of the children

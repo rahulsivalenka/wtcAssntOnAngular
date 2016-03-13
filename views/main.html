@@ -1,8 +1,8 @@
 <div view="main">
   <!-- <div>Main View for {{loggedInUser.id}} : {{loggedInUser.name}}</div> -->
   <div>
-    <table>
-    <thead>
+    <table class="employee-details row-alt-colors">
+    <thead ng-controller="employeeFormCtrl">
       <tr>
         <th colspan="8">Employee Details</th>
       </tr>
@@ -16,11 +16,12 @@
         <th>Email ID</th>
         <th>Added By</th>
       </tr>
-    </thead>
-    <tbody>
       <!-- form to add employee details -->
-      <tr class="form">
-        <td><input type="text" placeholder="First Name" ng-model="employee.name.firstName" /><br/><input type="text" placeholder="Last Name" ng-model="employee.name.lastName" /></td>
+      <tr class="form header">
+        <td>
+          <input type="text" placeholder="First Name" ng-model="employee.name.firstName" /><br/>
+          <input type="text" placeholder="Last Name" ng-model="employee.name.lastName" />
+        </td>
         <td><input type="text" placeholder="Employee ID" ng-model="employee.id" /><br/></td>
         <td><input type="text" placeholder="Designation" ng-model="employee.designation" /><br/></td>
         <td><input type="date" placeholder="DOB" ng-model="employee.dob" /><br/></td>
@@ -28,7 +29,12 @@
         <td><input type="text" placeholder="Mobile Number" ng-model="employee.mobile" /><br/></td>
         <td><input type="text" placeholder="Email ID" ng-model="employee.email" /><br/></td>
         <td><input type="text" placeholder="Added By" disabled ng-model="employee.addedBy"/><br/></td>
+
+        <!-- control to do CRUD op for the form -->
+        <td class="cu-opr-cell"><a class="cu-opr fa {{cuFaCls}} fa-2x "></a></td>
       </tr>
+    </thead>
+    <tbody>
       <!-- Iterating through all the employee details -->
       <tr ng-repeat="employee in employees">
         <td>{{employee.name.firstName}} {{employee.name.lastName}}</td>

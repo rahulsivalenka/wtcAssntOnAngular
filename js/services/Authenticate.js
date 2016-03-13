@@ -11,7 +11,7 @@ app.factory('authenticate', [
       if(Boolean(loggedInUser) // the auth info exists
           && loggedInUser.authenticated) { // and the user is authenticated
         // redirecting to the main page
-        $location.path(App.AUTH_URL + loggedInUser.id);
+        $location.path(EmployeeInfoApp.AUTH_URL + loggedInUser.id);
         return {
           authenticated: true,
           user: loggedInUser
@@ -19,7 +19,7 @@ app.factory('authenticate', [
       } else {
         // user not authenticated
         // redirect to login page
-        $location.path(App.LOGIN_URL);
+        $location.path(EmployeeInfoApp.LOGIN_URL);
         return {
           authenticated: false
         };

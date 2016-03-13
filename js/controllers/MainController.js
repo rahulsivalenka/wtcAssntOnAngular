@@ -8,22 +8,8 @@ app.controller('MainController', [
 
     /*models for the view*/
     $scope.params = $routeParams;
-    $scope.employee = {
-      name: {
-        firstName: 'Rahul',
-        lastName: 'SP'
-      },
-      id: null,
-      designation: '',
-      dob: new Date('3 July 1988'),
-      address: '',
-      mobile: '',
-      email: '',
-      addedBy: ''
-    };
-    $scope.employee.addedBy = $scope.loggedInUser.name;
+    
     $scope.employees = [];
-
     $scope.employees = [{
       name: {
         firstName: 'Rahul',

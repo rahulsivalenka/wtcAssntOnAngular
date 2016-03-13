@@ -2,6 +2,10 @@ body {
   background: rgba(204, 204, 204, 0.25);
 }
 
+body *:focus {
+  outline: 1px solid rgba(244, 67, 54, 0.88);
+}
+
 button {
   outline: none;
   border: none;
@@ -162,8 +166,51 @@ div#toast[role="alert"].error {
 }
 
 /*****************************/
-/**** employee table page ****/
+/**** main.html page ****/
 /*****************************/
+div[view=main] table.employee-details {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+div[view=main] table.employee-details td {
+  border: 1px solid rgba(0, 150, 136, 0.12);
+}
 div[view=main] tr.form td {
   vertical-align: top;
+}
+div[view=main] td {
+  max-width: 163px;
+  padding: 7px 5px;
+}
+div[view=main] input {
+  width: 130px;
+}
+.row-alt-colors tr.header {
+  background: none !important;
+}
+.row-alt-colors tr.header td {
+  border: none !important;
+}
+.row-alt-colors tbody tr:nth-child(odd) {
+  /*background: #ccc;*/
+  background: rgba(0, 150, 136, 0.12);
+}
+
+/* CU op button on the employee form */
+.cu-opr-cell {
+  vertical-align: middle !important;
+  padding: 0 !important;
+}
+.cu-opr {
+  padding: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.cu-opr:active {
+  color: rgba(244, 67, 54, 0.88);
+  font-size: 1.95em;
 }

@@ -63,7 +63,7 @@ app.controller('LoginController', [
           $scope.$emit('authenticate');
           
           // redirect to logged in page
-          $scope._redirectPage(App.AUTH_URL + userObj.id);
+          $scope._redirectPage(EmployeeInfoApp.AUTH_URL + userObj.id);
 
           toast.msg = "Login successfull."
           toast.error = false;

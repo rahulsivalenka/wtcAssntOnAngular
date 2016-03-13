@@ -5,6 +5,7 @@
   <title>Employee DB - WTC (AngulaJS)</title>
 
   <!-- css imports -->
+  <link rel="stylesheet" type="text/css" href="resources/font-awesome-4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="resources/css/main.css">
 
   <!-- angular js libs -->
@@ -14,9 +15,9 @@
   <!-- static data -->
   <!-- initializing the static data into a global object -->
   <script type="text/javascript">
-    window.App = {};
-    window.App.AUTH_URL = '/auth/';
-    window.App.LOGIN_URL = '/';
+    window.EmployeeInfoApp = {};
+    window.EmployeeInfoApp.AUTH_URL = '/auth/';
+    window.EmployeeInfoApp.LOGIN_URL = '/';
   </script>
 </head>
 
@@ -35,6 +36,9 @@
       According to AngularJS best practices, it is recommended to use ng-bind in index.html instead of {{}} to avoid unwanted visible {{}} before loading the angular FW. In other views {{}} can be used as the FW is already loaded by then.
     -->
   </div>
+  
+  <!-- modules -->
+  <script type="text/javascript" src="js/modules/employeeform.module.js"></script>
 
   <!-- app.js -->
   <script type="text/javascript" src="js/app.js"></script>
