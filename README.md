@@ -1,6 +1,11 @@
 # wtcAssntOnAngular
 WTC assignment on Angular JS 1.4.x
 
+## About Angular JS
+* [Views](views/README.md)
+* [Controllers](js/controllers/README.md)
+* [Services](js/services/README.md)
+
 ##Aim
 1. #####UI/Screens/View
     Can use any of the below in which you are comfortable to develop UX : 
